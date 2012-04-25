@@ -1,21 +1,22 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
-  <name>Fast Project Open plugin</name>
+  <name>Fast Project Open</name>
   <description>Opens project by taking path from clipboard</description>
-  <version>1.6</version>
-  <vendor email="kk@kohsuke.org" url="https://intellij-plugins.dev.java.net/fast-open/">Kohsuke Kawaguchi</vendor>
-  <idea-version since-build="7126"/>
+  <version>2.0</version>
+  <vendor email="sbaranov@gmail.com" url="https://github.com/CrazyCoder/intellij-fast-open-plugin">Kohsuke Kawaguchi and
+    Serge
+    Baranov
+  </vendor>
+  <idea-version since-build="8000"/>
   <actions>
     <action id="org.kohsuke.idea.fastopen" class="org.kohsuke.idea.fastopen.FastOpener" text="Open Project _Fast"
             description="Opens a project currently copied into clipboard">
-      <!--keyboard-shortcut keymap="$default" first-keystroke="alt F" second-keystroke="alt F"/-->
-      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="OpenProject"/>
+      <add-to-group group-id="FileOpenGroup" anchor="last"/>
     </action>
   </actions>
 
   <change-notes>
-    Now listens on TCP/IP port 39524 and if a file name or directory name
-    is sent to this port, it'll open it.
+    IDEA 11 compatible, opens .idea directories, File menu group fixed
   </change-notes>
 
   <application-components>
